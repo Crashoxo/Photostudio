@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
+    <style>
+      .top_photo {
+        width: 100%;
+        height: auto;
+      }
+
+      /* 上圖置中 */
+      .top_photo_div {
+        /* 置中 */
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      /* ------------------------------------------- */
+
+      input[type="range"] {
+        width: 500px;
+        height: 16px;
+        outline: none;
+        background: none;
+      }
+
+      input[type="text"] {
+        padding: 5px 5px;
+        margin: 8px 0;
+        box-sizing: content-box;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: white;
+      }
+
+      input[type="email"] {
+        padding: 5px 5px;
+        margin: 8px 0;
+        box-sizing: content-box;
+        border: none;
+        background-color:  rgba(255, 255, 255, 0.5);
+        color: white;
+        width: 50%;
+      }
+
+      input[type="text"]:focus {
+        background-color: white;
+        color: rgb(0, 0, 0);
+      }
+
+      input[type="email"]:focus {
+        background-color: white;
+        color: rgb(0, 0, 0);
+      }
+
+      input[type="radio"] {
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        cursor: pointer;
+      }
+
+      .form_all div:hover {
+        /* background-color: rgb(248, 247, 247); */
+      }
+
+      p {
+        letter-spacing: 2px;
+        font-weight: 700;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      form {
+        width: 450px;
+        position: absolute;
+        /* top: 20%; */
+        /* left: 46%; */
+        /* margin: -100px 50px 50px 50px; */
+        background: linear-gradient(rgba(97, 93, 93, 0.5), rgba(97, 93, 93, 0.5));
+        border: 30px solid rgb(223, 215, 215);
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 16px;
+        letter-spacing: -0.8px;
+        word-spacing: 1px;
+        color: #523508;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: none;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 20px;
+        /* margin-left: -6px; */
+      }
+
+      body {
+        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)),
+          url("./image/booking/background01.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .booking_calendar {
+        width: 100%;
+        overflow-y: hidden;
+        text-align: center;
+        margin-top: 70px;
+      }
+
+      /* @media screen and (max-width: 1500px) {
+        form {
+          width: 110%;
+          height: 2900px;
+          position: absolute;
+          top: 20%;
+          left: 46%;
+          margin: 600px 150px -50px -220px;
+          background: linear-gradient(rgba(97, 93, 93, 0.5), rgba(97, 93, 93, 0.5));
+
+          border: 30px solid rgb(223, 215, 215);
+          font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+          font-size: 16px;
+          letter-spacing: -0.8px;
+          word-spacing: 1px;
+          color: #523508;
+          font-weight: 400;
+          font-style: normal;
+          font-variant: normal;
+          text-transform: none;
+          text-align: none;
+          box-sizing: border-box;
+        }
+
+        .booking_calendar {
+          position: relative;
+          margin-top: 80px;
+          margin-left: 0px;
+        }
+
+        body {
+          background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)),
+            url("./image/booking/background01.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size: 300%;
+        }
+
+        .form_all {
+          padding-top: 10px;
+          padding-left: 40px;
+        }
+      } */
+
+      .calendar_line a {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      div{
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="GET" action="XXX.php">
+        <div class="form_all">
+          <p class="m-4 calendar_line">
+            <a href="https://calendar.google.com/calendar/embed?src=csfe65q1jkhu7mv5g30nbdlt90%40group.calendar.google.com&ctz=Asia%2FShanghai" target="_blank" title="▸全視窗 預約日歷◂">
+            ​▸按我全視窗 預約日歷◂</a></p>
+          <div id="people_0">
+            <table class="table_00">
+              <tr>
+                  <p>因應政府的微解封，我們也微開棚啦～提供大家微租棚喔</p>
+                  <p>7/13-7/26 特殊期間租棚辦法：</p>                
+                  <p>每日僅開放兩個時段  11:00-14:00、14:30-17:30</p>                
+                  <p>時段內僅接受一組預約，人數3人以下</p>                
+                  <p>時段已包含整裝撤裝時間，不再另行提供，請準時離場</p>               
+                  <p>每時段內棚景可任選，不分平日假日固定費用為1600元</p>             
+                  <p>請透過表單預約，匯款全額後，即算完成預約</p>             
+                  <p>請配合簡訊實聯制、量體溫、酒精消毒、全程配戴口罩（被拍攝者除外）、禁止飲食</p>
+                  <br>   
+                <p>&emsp;＊是否以閱讀攝影棚使用規則？</p></td>
+              </tr>
+              <!-- label的用處 點擊後會到該選單 -->
+              <tr>
+                <td>
+                  &emsp;&emsp;<input type="radio" name="people" id="people_one" value="p_self" checked />
+                  <label for="people_one">是&emsp;</label>
+                  <input type="radio" name="people" id="people_two" value="p_two" />
+                  <label for="people_two">否</label>
+  
+              </tr>
+            </table>
+          </div>
+          <div id="purpose_0">
+            <table class="table_01">
+                  <p class="mt-3 pt-3">&emsp;1.預約日期（可先私訊粉專確認無人預約）</p>
+                  &emsp;&emsp;<input class="m-3" type="date">
+            </table>
+          </div>
+          <div id="table_3">
+            <table class="table_02">
+              <td>
+                <p class="mt-3 pt-3">&emsp;2.預約時段</p>
+                &emsp;&emsp;
+                <input class="m-3" type="radio" name="time" id="time_0" value="p_self" checked />
+                <label for="time_0">11:00-14:00</label>
+                <br>&emsp;&emsp;
+                <input class="m-3" type="radio" name="time" id="time_1" value="p_two" />
+                <label for="time_1">14:30-17:30</label>
+                <p></p>
+              </td>
+            </table>
+          </div>
+  
+          <div id="style_00">
+            <table class="table_02">
+              <tr>
+                <td><p>&emsp;3.預約棚景（可複選）</p></td>
+                <tr>
+                <td>
+                  &emsp;&emsp;<input type="checkbox" name="style" id="style_1" value="sty_1" />
+                  <label for="style_1">歐風棚&emsp;</label>
+                  <input type="checkbox" name="style" id="style_2" value="sty_2" />
+                  <label for="style_2">公主棚&emsp;</label>
+                  <input type="checkbox" name="style" id="style_3" value="sty_3" />
+                  <label for="style_3">魔女棚&emsp;</label>
+                  <input type="checkbox" name="style" id="style_4" value="sty_4" />
+                  <label for="style_4">日式棚&emsp;</label>
+                  <input type="checkbox" name="style" id="style_5" value="sty_5" />
+                  <label for="style_5">白棚</label>
+  
+                </td>
+             
+              </tr>
+            </table>
+          </div>
+  
+          <div id="need">
+            <p class="mt-3 pt-3">&emsp;4.是否有商業攝影的需求?</p>
+            &emsp;&emsp;<input type="radio" name="need" id="ne_0" value="ne_00" checked />
+            <label  class="m-3" for="ne_0">是</label>
+            <input  class="m-3" type="radio" name="need" id="ne_1" value="ne_01"/>
+            <label for="ne_1">否</label>
+          </div>
+  
+          <div id="product">
+  
+            <p class="mt-3 pt-3">&emsp;5.預約名稱 </p>
+            &emsp;&emsp;<input class="mb-5"type="text" name="" id="">
+  
+          </div>
+  
+          <div id="time_0">
+  
+            <p class="mt-3 pt-3">&emsp;6.聯絡電話 </p>
+            &emsp;&emsp;<input class="mb-5"type="text" name="" id="">
+          </div>
+  
+          <div id="Makeup">
+            <p class="mt-3 pt-3">&emsp;7.Ｅ-Mail (我們會透過電子郵件寄送匯款資訊，請預約後記得查看信箱，匯款全額後才算完成預約） *</p>
+            &emsp;&emsp;<input class="mb-5" type="email">
+          </div>
+  
+  
+          <div id="survey_0">
+            <p class="mt-3 pt-3">&emsp;8.使用人數（最多3人） *&emsp;
+              <select name="survey" id="survey_00">
+                  <option value="">1人</option>
+                  <option value="">2人</option>
+                  <option value="">3人</option>
+                </optgroup>
+  
+              </select>
+            </p>
+            <br /><br /><br /><br />
+          </div>
+          <br />
+          <br />
+  
+          <footer>
+            <input class="p-1" type="image" name="photo" src="./image/booking/send.jpg" onclick="submit()" title="點我提交"  />
+          </footer>
+  
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      </form>
+  </body>
+</html>

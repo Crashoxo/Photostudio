@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="./studio_css/slick.css" />
+    <!-- 基本CSS -->
+    <link rel="stylesheet" href="./studio_css/mb-basic.css" />
+    <link rel="stylesheet" href="./studio_css/photoswipe.css" />
+
+    <!-- 圖片UI -->
+    <link rel="stylesheet" href="./studio_css/default-skin.css" />
+    <!-- 衝突 -->
+    <!-- <script src="./studio_js/BAHA_EGG.js"></script> -->
+    <!-- 衝突 -->
+    <script src="./studio_js/js.cookie-2.1.4.js"></script>
+    <script src="./studio_js/photoswipe.min.js"></script>
+
+    <!-- 顯示圖片 -->
+    <script src="./studio_js/lazysizes-2.0.7.min.js"></script>
+    <!-- 點圖放大hammer-2.0.4 -->
+    <script src="./studio_js/hammer-2.0.4.min.js"></script>
+    <script src="./studio_js/photoswipe.min.js"></script>
+    <script src="./studio_js/photoswipe-ui-default.min.js"></script>
+    <script src="./studio_js/embed_player.js"></script>
+    <script src="./studio_js/mobile_2k14.js"></script>
+    <script src="./studio_js/mobile_2k15.js"></script>
+    <script src="./studio_js/overthrow.js"></script>
+    <script src="./studio_js/mobileBigBanner.js"></script>
+    <script src="./studio_js/slick-1.9.0.min.js"></script>
+
+    <style>
+
+      p {
+        margin-bottom: 2.5rem;
+      }
+      
+      body{
+        background-color: rgb(169, 159, 180);
+        background-image:url(./image/studio/006.jpg);
+        background-size:cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+      }
+
+      main {
+      width: 100%;
+      /* height: 5000px; */
+      /* 並排 */
+      display: flex;
+      flex-direction: column;
+      }
+      
+      .TOP_photo{
+      width: 100%;
+      }
+
+      @media screen and (max-width: 800px) {
+        .TOP_photo{
+          padding-top: 70px;
+        }
+      }
+
+      #about_us {
+      font-size:45px;
+      height: 70px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      width: 300px;
+      background-color:rgba(255,255,255,0.3);
+      color: #59d3f1;
+      text-shadow: 5px 5px 10px rgba(196, 185, 180, 0.75);
+      box-shadow: 5px 5px 20px -3px #1e92af;    
+      }
+
+      main > .about{
+      background-color: transparent;
+      /* background: rgb(114,91,83);
+      background: radial-gradient(circle, rgba(114,91,83,1) 0%, rgba(255,255,255,1) 100%); */
+      padding: 80px;    
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight:bold;
+      /* 固定背景 */
+      /* background-position: 25% 75%; */
+      /* background-repeat: no-repeat; */
+      /* background-size: cover; */
+      }
+      
+      
+      main >.about> .about_width{      
+      width: 80%;
+      font-size: 16px;
+      background-color: rgb(255,255,255,0.4);
+      color: #50b9d3;
+      line-height: 1.3rem;
+      word-spacing: 0.2rem;
+      padding: 0 20px;
+      margin: 30px;
+      /* text-align: center; */
+      /* text-indent : 2em; */
+      /* background-color: #F4F1EA; */
+      }
+      
+      .txt p:hover {
+      /* 做一個block */
+       color: #1e92af;
+       position: relative; /* 當滑鼠經過超連結時，超連結往右下位移2像素 */
+       top: 2px;
+       left: 2px;
+      }
+      
+      @media screen and (max-width: 800px) {
+        main >.about> .about_width{
+        width: 140%;
+        /* text-align: center; */
+        font-size: 16px;
+        }
+
+        #about_us{
+         position: relative;
+         right: 18%;
+        /* background-color: tomato; */
+        }
+        .wrapper{
+          margin-top: -100px;
+        }
+        
+      }
+
+      
+      .txt{
+      padding-left: 2%;
+      padding-right: 2%;
+      }
+    /* --youtube---------------------------------- */
+
+      .uvideo {
+          position: relative;
+          height: 0;
+          padding-bottom: 56.25%;
+      }
+
+    /* --youtube End---------------------------------- */
+
+      .slider-nav-block {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .photos{
+          padding-left:10%;
+          width: 90%;
+          /* background-color: rgb(48, 28, 228); */
+          /* height: 10vh; */      
+      }
+
+      .gnn_box{
+          background-color: transparent;
+          margin-top: -10%;
+      }
+      
+      @media screen and (max-width: 800px) {
+    
+        .photos{
+          padding-left:0; 
+          width:auto;
+        }  
+      }
+
+      .img {
+      cursor: url("./001.png"), auto;
+      }
+   </style>
+      
+
+
+
+  </head>
+    <body>
+         <!-- 幻燈片 ------------------------------------>
+         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+           <div class="pswp__bg"></div>
+           <div class="pswp__scroll-wrap">
+             <div class="pswp__container">
+               <div class="pswp__item"></div>
+               <div class="pswp__item"></div>
+               <div class="pswp__item"></div>
+             </div>
+             <div class="pswp__ui pswp__ui--hidden">
+               <div class="pswp__top-bar">
+                 <div class="pswp__counter"></div>
+                 <button class="pswp__button pswp__button--close" title="關閉"></button>
+                 <button class="pswp__button pswp__button--share" title="分享"></button>
+                 <button class="pswp__button pswp__button--fs" title="全螢幕"></button>
+                 <button class="pswp__button pswp__button--zoom" title="放大/縮小"></button>
+
+                 <div class="pswp__preloader">
+                   <div class="pswp__preloader__icn">
+                     <div class="pswp__preloader__cut">
+                       <div class="pswp__preloader__donut"></div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                 <div class="pswp__share-tooltip"></div>
+               </div>
+
+               <button class="pswp__button pswp__button--arrow--left" title="上一張"></button>
+
+               <button class="pswp__button pswp__button--arrow--right" title="下一張"></button>
+
+               <div class="pswp__caption">
+                 <div class="pswp__caption__center"></div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+    <!-- 最上面的照片 -->
+    <img class="TOP_photo img" src="./image/studio/031.jpg" alt="">
+
+      <script>
+      $(document).ready(function () {
+      $(".TOP_photo").hide();   
+      $(".TOP_photo").fadeIn(1000);
+       });
+     </script>
+    
+
+   <div class="photos">
+          <main>
+            <div class="about">
+              <div id="about_us">攝&nbsp;影&nbsp;棚</div> 
+              <div class="about_width">
+              <div class="txt">
+                <br><br><br>
+                <p><i style="font-size: 20px;" class="fa fa-comment-o" aria-hidden="true"></i>&nbsp;提供各種不同風格的攝影棚景，以下給您一些拍攝建議。</p>
+                  
+                  <p><i style="font-size: 20px;"class="fa fa-star-o" aria-hidden="true"></i>&nbsp;想要呈現最自然的互動陽光清新的風格可以選韻光居家純白棚。想甜美一些就選夢幻公主房，粉紅與白為主調，讓可愛少女心無極限。</p>
+                  
+                  <p><i style="font-size: 20px;"class="fa fa-star-o" aria-hidden="true"></i>&nbsp;喜歡歐式風格，可以選擇華麗復古乾燥花棚。乾燥花海的唯美浪漫，個人形象照、閨蜜寫真都非常合適。歐式古堡房更是全家福寫真熱門棚景，最推薦自助婚紗拍攝使用。</p>
+                  
+                  <p><i class="fa fa-star-o" aria-hidden="true"></i>&nbsp;奇幻異色花棚、奇幻秘境房、暗黑王作房、異域顛倒房皆年度鉅資打造，專門提供創作寫真或工作特殊需求使用，非常推薦給有獨特攝影想法的攝影師。</p>
+                  <br>
+                  <p>
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;奇幻異色花棚：拍照1500元/時，錄影2000元/時  <br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;華麗復古花棚：拍照1500元/時，錄影2000元/時  <br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;韻光居家白棚：拍照1000元/時，錄影1500元/時  <br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;A房-夢幻公主房：拍照1500元/時，錄影2000元/時<br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;B房-歐式古堡房：拍照1500元/時，錄影2000元/時<br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;C房-奇幻秘境房：拍照1500元/時，錄影2000元/時<br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;D房-暗黑王座房：拍照1500元/時，錄影2000元/時<br /><br />
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;E房-異域顛倒房：拍照1500元/時，錄影2000元/時<br /><br />
+                  </p>
+                  <p><i class="fa fa-github-alt" aria-hidden="true"></i>&nbsp;單棚最少使用時數為2小時起，第3小時後可混搭其他棚 一日租借4小時以上，第5小時開始享有8折優惠
+                    <br /><br />
+                    <i class="fa fa-github-alt" aria-hidden="true"></i>&nbsp;婚紗/商業/長期使用的攝影師另有其他更優惠方案，可私訊粉專詢問<br /><br />
+                  </p>
+                <br>
+              </div>
+              </div>
+            </div>
+          </main>
+  
+    <div class="wrapper">
+      
+      <!--新聞內容開始-->
+      <article class="gnn_box">
+        
+        <div>
+          <div>
+            　　<a
+              class="acglink"
+              href=""
+              target="_blank"
+              ></a
+            ><a
+              class="acglink"
+              href=""
+              target="_blank"
+              ></a
+            >
+          </div>
+          <div>
+            　　<a
+              class="acglink"
+              href=""
+              target="_blank"
+              ></a
+            >
+          </div>
+          <div>          
+          </div>
+          <div>
+            　　<a
+              class="acglink"
+              href="//acg.gamer.com.tw/search.php?encode=utf8&amp;kw=%E8%B2%93%E9%83%8E%E6%A8%82%E5%9C%92-Catboys+Paradise"
+              target="_blank"
+              ></a
+            ><a
+              class="acglink"
+              href="//acg.gamer.com.tw/search.php?encode=utf8&amp;kw=%E8%B2%93%E9%83%8E%E6%A8%82%E5%9C%92-Catboys+Paradise"
+              target="_blank"
+              ></a
+            >
+          </div>
+          <div>
+            <div class="banner-container">
+              <div class="gnn-slick-banner-horizontal-1625819242528 header-banner">
+                <div class="header-banner-main center slider banner-horizontal">
+                  <!-- 大圖 -->
+                  <a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/008.jpg"
+                      data-srcset="./image/studio/008.jpg?w=600 1x,./image/studio/008.jpg?w=1200 2x,./image/studio/008.jpg 3x"
+                      style=""
+                    /> </a
+                  >
+                  <a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/028.jpg"
+                      data-srcset="./image/studio/028.jpg?w=600 1x,./image/studio/028.jpg?w=1200 2x,./image/studio/028.jpg 3x"
+                      style=""
+                    /> </a
+                  >
+                  <a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/026.jpg"
+                      data-srcset="./image/studio/026.jpg?w=600 1x,./image/studio/026.jpg?w=1200 2x,./image/studio/026.jpg 3x"
+                      style=""
+                    /> </a
+                  >
+                  <a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/024.jpg"
+                      data-srcset="./image/studio/024.jpg?w=600 1x,./image/studio/024.jpg?w=1200 2x,./image/studio/024.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/020.jpg"
+                      data-srcset="./image/studio/020.jpg?w=600 1x,./image/studio/020.jpg?w=1200 2x,./image/studio/020.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/022.jpg"
+                      data-srcset="./image/studio/022.jpg?w=600 1x,./image/studio/022.jpg?w=1200 2x,./image/studio/022.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/016.jpg"
+                      data-srcset="./image/studio/016.jpg?w=600 1x,./image/studio/016.jpg?w=1200 2x,./image/studio/016.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/014.jpg"
+                      data-srcset="./image/studio/014.jpg?w=600 1x,./image/studio/014.jpg?w=1200 2x,./image/studio/014.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/012.jpg"
+                      data-srcset="./image/studio/012.jpg?w=600 1x,./image/studio/012.jpg?w=1200 2x,./image/studio/012.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/010.jpg"
+                      data-srcset="./image/studio/010.jpg?w=600 1x,./image/studio/010.jpg?w=1200 2x,./image/studio/010.jpg 3x"
+                      style=""
+                    /> </a
+                  ><a href="javascript:;">
+                    <img
+                      class="lazyload"
+                      data-src="./image/studio/018.jpg"
+                      data-srcset="./image/studio/018.jpg?w=600 1x,./image/studio/018.jpg?w=1200 2x,./image/studio/018.jpg 3x"
+                      style=""
+                    />
+                  </a>
+                </div>
+
+                <!-- 縮圖 -->
+                <div class="slider-nav-block products-slider-scroll-area">
+                  <div class="slider-nav products-slider-items-area horizontal-nav">
+
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/009.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/029.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/027.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/025.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/021.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/023.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/017.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/015.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/013.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/011.jpg"
+                        style=""
+                      />
+                    </div>
+                    <div class="products-items-content-block">
+                      <img
+                        class="lazyload"
+                        data-src="./image/studio/019.jpg"
+                        style=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-count" data-length="11">
+                  <span class="slider-count-span">1/11</span>
+                </div>
+              </div>
+            </div>
+            <script>
+              jQuery(function () {
+                jQuery(".gnn-slick-banner-horizontal-1625819242528 .banner-horizontal").slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: true,
+                  prevArrow: '<div class="slick-prev" aria-label="Previous" type="button"><div></div><div></div></div>',
+                  nextArrow: '<div class="slick-next" aria-label="Next" type="button"><div></div><div></div></div>',
+                  asNavFor: ".gnn-slick-banner-horizontal-1625819242528 .horizontal-nav",
+                });
+                jQuery(".gnn-slick-banner-horizontal-1625819242528 .horizontal-nav").slick({
+                  // 顯示幾個
+                  slidesToShow: 6,
+                  slidesToScroll: 1,
+                  asNavFor: ".gnn-slick-banner-horizontal-1625819242528 .banner-horizontal",
+                  arrows: false,
+                  dots: false,
+                  centerMode: false,
+                  centerPadding: "8px",
+                  focusOnSelect: true,
+                });
+
+                let imgLength = jQuery(".gnn-slick-banner-horizontal-1625819242528 .slider-count").data("length");
+                jQuery(".gnn-slick-banner-horizontal-1625819242528 .banner-horizontal").on("afterChange", function () {
+                  let currentIndex =
+                    jQuery(".gnn-slick-banner-horizontal-1625819242528 .banner-horizontal").slick("slickCurrentSlide") +
+                    1;
+
+                  jQuery(".gnn-slick-banner-horizontal-1625819242528 .slider-count span").text(
+                    currentIndex + "/" + imgLength
+                  );
+                });
+              });
+            </script>
+          </div>
+
+        </div>
+          <div>&nbsp;</div>
+
+          <!-- youtube -->
+          <div>
+            <div class="video-container">
+              <div class="videoWrapper video-youtube">
+                <iframe
+                  class="lazyload"
+                  style="z-index: 0"
+                  data-src="https://www.youtube.com/embed/4XdOC0C7kPQ?wmode=transparent&wmode=transparent"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div>&nbsp;</div>
+        
+          <div class="uvideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/U7t1Y_BF-O8?wmode=transparent&wmode=transparent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+   </div>
+  <script>
+      // init photoswipe
+
+      // 放大圖
+      // Mobile.PhotoSwipe.init(".gnn_box img.lazyload:not(#morePicBtn)");
+
+    </script>
+
+  </body>
+</html>

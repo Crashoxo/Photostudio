@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./studio_css/slick.css" />
+    <!-- 基本CSS -->
+    <link rel="stylesheet" href="./studio_css/mb-basic.css" />
+    <link rel="stylesheet" href="./studio_css/photoswipe.css" />
+    <style type="text/css">
+        .imgPreview {
+    
+    
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%; /*容器佔滿整個螢幕*/
+            height: 100%;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .imgPreview img {
+    
+    
+            z-index: 100;
+            width: 60%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        /*新增滑鼠移入圖片效果*/
+        .img {
+    
+    
+            cursor: url("./image/050.jpg"), auto;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+    
+    
+            $('.img').on('click', function () {
+    
+    
+                var src = $(this).attr('src');
+                $('.imgPreview img').attr('src', src);
+                $('.imgPreview').show()
+            });
+            $('.imgPreview').on('click', function () {
+    
+    
+                $('.imgPreview').hide()
+            });
+        })
+    </script>
+</head>
+<!-- https://www.gushiciku.cn/pl/gzP1/zh-tw -->
+
+<body>
+<img src="./image/059.jpg" class="img">
+
+<div class="imgPreview">
+    <img src="#" alt="" id="imgPreview">
+</div>
+
+</body>
+
+</html>
+  </head>
+  <body></body>
+</html>

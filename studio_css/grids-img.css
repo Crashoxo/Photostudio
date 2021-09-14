@@ -1,0 +1,44 @@
+ul.bh-grids-img {
+  display:table;
+  margin:0 auto;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+ul.bh-grids-img li {
+  display: inline-block;
+  text-align: center;
+}
+
+ul.bh-grids-img li figcaption {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+ul.bh-grids-img li figure {
+  margin: 4px auto 8px;
+  width: 100%;
+  color: #666666;
+  font-size: 13px;
+}
+
+ul.bh-grids-img .bh-grids-img-box {
+  margin: 4px 0;
+  float: left;
+}
+
+ul.bh-grids-img img {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/*# sourceMappingURL=grids-img.css.map */

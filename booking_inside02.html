@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      input[type="range"] {
+        width: 300px;
+        height: 16px;
+        outline: none;
+        background: none;
+      }
+
+      input[type="text"] {
+        padding: 5px 5px;
+        margin: 8px 0;
+        box-sizing: content-box;
+        border: none;
+        background-color: #523508;
+        color: white;
+      }
+
+      input[type="radio"] {
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        cursor: pointer;
+      }
+
+      div > div:hover {
+        background-color: rgb(248, 247, 247);
+      }
+      
+
+      p {
+        letter-spacing: 2px;
+        font-weight: 700;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      form {
+        width: 450px;
+        position: absolute;
+        background: linear-gradient(rgba(97, 93, 93, 0.5), rgba(97, 93, 93, 0.5));
+        border: 30px solid rgb(223, 215, 215);
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 16px;
+        letter-spacing: -0.8px;
+        word-spacing: 1px;
+        color: #523508;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: none;
+        box-sizing: border-box;
+        padding: 20px;
+      
+      }
+
+      .form_all{
+      padding-left: 15px;
+      }
+
+      body {
+        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), url("./image/booking/background01.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }
+
+   #Area_0 input{
+    outline:none;
+   }
+   
+    </style>
+  </head>
+
+  <body>
+    <form method="GET" action="XXX.php">
+      <div>
+        <img src="./image/booking/Top.jpg" alt="首頁照片" />
+      </div>
+
+      <div class="form_all">
+        <div id="people_0">
+          <table class="table_00">
+            <tr>
+              <td colspan="8"><p>1.通常都與幾位同行來攝影棚?</p></td>
+            </tr>
+            <!-- label的用處 點擊後會到該選單 -->
+            <tr>
+              <td>
+                <input type="radio" name="people" id="people_one" value="p_self" onclick="myFunction_01()" checked />
+                <label for="people_one">自己</label>
+                <input type="radio" name="people" id="people_two" value="p_two" onclick="myFunction_01()" />
+                <label for="people_two">含自己兩位</label>
+                <input type="radio" name="people" id="people_three" value="p_three" onclick="myFunction_01()" />
+                <label for="people_three">含自己三位</label>
+                <input type="radio" name="people" id="people_four" value="p_three" onclick="myFunction_01()" />
+                <label for="people_four">含自己四位</label>
+                <input type="radio" name="people" id="people_myCheck" onclick="myFunction_01()" value="" />
+                <label for="people_myCheck">其他:</label>
+                <input type="text" name="people" id="people_other" style="display: none" value="請輸入" />
+              </td>
+            </tr>
+            <script>
+              function myFunction_01() {
+                var radio = document.getElementById("people_myCheck");
+                var text = document.getElementById("people_other");
+                if (radio.checked == true) {
+                  text.style.display = "";
+                } else {
+                  text.style.display = "none";
+                }
+              }
+            </script>
+          </table>
+        </div>
+        <div id="purpose_0">
+          <table class="table_01">
+            <tr>
+              <td colspan="14">
+                <p>2.通常以什麼目的來到攝影棚? (可複選)</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="purpose" id="purpose_1" value="pur_1" />
+                <label for="purpose_1">個人寫真</label>
+                <input type="checkbox" name="purpose" id="purpose_2" value="pur_2" />
+                <label for="purpose_2">cosplay</label>
+                <input type="checkbox" name="purpose" id="purpose_3" value="pur_3" />
+                <label for="purpose_3">閨密寫真</label>
+                <input type="checkbox" name="purpose" id="purpose_4" value="pur_4" />
+                <label for="purpose_4">婚紗照</label>
+                <input type="checkbox" name="purpose" id="purpose_5" value="pur_5" />
+                <label for="purpose_5">情侶照</label>
+                <input type="checkbox" name="purpose" id="purpose_6" value="pur_6" />
+                <label for="purpose_6">家庭照</label>
+                <input type="checkbox" name="purpose" id="purpose_7" value="pur_7" />
+                <label for="purpose_7">孕婦寫真</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="purpose" id="purpose_8" value="pur_8" />
+                <label for="purpose_8">兒童寫真</label>
+                <input type="checkbox" name="purpose" id="purpose_9" value="pur_9" />
+                <label for="purpose_9">寵物寫真</label>
+                <input type="checkbox" name="purpose" id="purpose_10" value="pur_10" />
+                <label for="purpose_10">班級個人照</label>
+                <input type="checkbox" name="purpose" id="purpose_11" value="pur_11" />
+                <label for="purpose_11">企業形象照</label>
+                <input type="checkbox" name="purpose" id="purpose_12" value="pur_12" />
+                <label for="purpose_12">食物攝影</label>
+                <input type="checkbox" name="purpose" id="purpose_13" value="pur_13" />
+                <label for="purpose_13">商品攝影</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="purpose" id="purpose_14" value="pur_14" />
+                <label for="purpose_14">素材寫真</label>
+                <input type="checkbox" name="purpose" id="purpose_15" value="pur_15" />
+                <label for="purpose_15">影像錄影</label>
+                <input type="checkbox" name="purpose" id="purpose_myCheck" onclick="myFunction_02()" value="" />
+                <label for="purpose_myCheck">其他:</label>
+                <input type="text" name="purpose" id="purpose_other" style="display: none" value="請輸入" />
+              </td>
+            </tr>
+            <script>
+              function myFunction_02() {
+                var checkbox = document.getElementById("purpose_myCheck");
+                var text = document.getElementById("purpose_other");
+                if (checkbox.checked == true) {
+                  text.style.display = "";
+                } else {
+                  text.style.display = "none";
+                }
+              }
+            </script>
+          </table>
+        </div>
+        <div id="table_3">
+          <table class="table_02">
+            <td>
+              <p>3.可接受的攝影棚全天包場單人價位為?</p>
+              <input
+                type="range"
+                name="pay"
+                max="1000"
+                min="100"
+                step="100"
+                onchange="document.getElementById('show').innerHTML=value"
+              /><span id="show"></span>$NT
+            </td>
+          </table>
+        </div>
+
+        <div id="style_00">
+          <table class="table_02">
+            <tr>
+              <td><p>4.喜歡的人物攝影風格為? (可複選)</p></td>
+              <tr>
+              <td>
+                <input type="checkbox" name="style" id="style_1" value="sty_1" />
+                <label for="style_1">狂野</label>
+                <input type="checkbox" name="style" id="style_2" value="sty_2" />
+                <label for="style_2">浪漫</label>
+                <input type="checkbox" name="style" id="style_3" value="sty_3" />
+                <label for="style_3">簡約</label>
+                <input type="checkbox" name="style" id="style_4" value="sty_4" />
+                <label for="style_4">文青</label>
+                <input type="checkbox" name="style" id="style_5" value="sty_5" />
+                <label for="style_5">血腥</label>
+                <input type="checkbox" name="style" id="style_6" value="sty_6" />
+                <label for="style_6">恐怖</label>
+                <input type="checkbox" name="style" id="style_7" value="sty_7" />
+                <label for="style_7">魔幻</label>
+                <input type="checkbox" name="style" id="style_8" value="sty_8" />
+                <label for="style_8">動漫</label>
+              </td>
+            </tr>
+              <td>
+                <input type="checkbox" name="style" id="style_9" value="sty_9" />
+                <label for="style_9">歐風</label>
+                <input type="checkbox" name="style" id="style_10" value="sty_10" />
+                <label for="style_10">日式</label>
+                <input type="checkbox" name="style" id="style_11" value="sty_11" />
+                <label for="style_11">鄉村</label>
+                <input type="checkbox" name="style" id="style_12" value="sty_12" />
+                <label for="style_12">復古</label>
+                <input type="checkbox" name="style" id="style_13" value="sty_13" />
+                <label for="style_13">大尺</label>
+                <input type="checkbox" name="style" id="style_14" value="sty_14" />
+                <label for="style_14">超現實</label>
+                <input type="checkbox" name="style" id="style_myCheck" onclick="myFunction_03()" value="" />
+                <label for="style_myCheck">其他:</label>
+                <input type="text" name="purpose" id="style_other" style="display: none" value="請輸入" /><br /><br />
+              </td>
+              <script>
+                function myFunction_03() {
+                  var checkbox = document.getElementById("style_myCheck");
+                  var text = document.getElementById("style_other");
+                  if (checkbox.checked == true) {
+                    text.style.display = "";
+                  } else {
+                    text.style.display = "none";
+                  }
+                }
+              </script>
+            </tr>
+          </table>
+        </div>
+
+        <div id="need">
+          <p>5.是否有商品攝影的需求?</p>
+          <input type="radio" name="need" id="ne_0" value="ne_00" onclick="myFunction_not00()" checked />
+          <label for="ne_0">是</label>
+          <input type="radio" name="need" id="ne_1" value="ne_01" onclick="myFunction_not01()" />
+          <label for="ne_1">否</label>
+
+          <script>
+            function myFunction_not00() {
+              let a = document.getElementById("product");
+
+              console.log(a);
+              console.log("上面是a");
+
+              // let child = product的子elements(虛擬元素?)
+              let b = a.children;
+
+              console.log(b);
+              console.log("上面是b");
+              console.log(b[0]);
+              console.log("上面是b的第一項");
+
+              // 把全部child 都變失能
+              for (let i = 0; i < b.length; i++) {
+                console.log(b);
+                b[i].disabled = false;
+              }
+            }
+
+            function myFunction_not01() {
+              // let product = 抓div的id
+              let a = document.getElementById("product");
+
+              // 偵錯用
+              console.log(a);
+              console.log("上面是a");
+              // 偵錯用
+
+              // let child = product的子elements(虛擬元素?)
+              let b = a.children;
+
+              // 偵錯用
+              console.log(b);
+              console.log("上面是b");
+              console.log(b[0]);
+              console.log("上面是b的第一項");
+              // 偵錯用
+
+              // 把全部child 都變失能
+              for (let i = 0; i < b.length; i++) {
+                // 讓b[0]~b[x]的disabled 都=true
+                b[i].disabled = true;
+              }
+
+              // console.log("這是a的第三項");
+              // console.log(a[3]);
+
+              // console.log("把a的第三項停用");
+              // a[3].disabled = true;
+
+           }
+          </script>
+        </div>
+
+        <div id="product">
+
+          <p>6.承上題，拍攝商品時，最常拍攝的物品為? (可複選)</p>
+          <input type="checkbox" class="pro" name="product" id="product_0" value="pro_0" />
+          <label for="product_0">無前述需求</label>
+          <input type="checkbox" class="pro" name="product" id="product_1" value="pro_1" />
+          <label for="product_1">食物</label>
+          <input type="checkbox" class="pro" name="product" id="product_2" value="pro_2" />
+          <label for="product_2">化妝品</label>
+          <input type="checkbox" class="pro" name="product" id="product_3" value="pro_3" />
+          <label for="product_3">衣鞋</label>
+          <input type="checkbox" class="pro" name="product" id="product_4" value="pro_4" />
+          <label for="product_4">3C</label>
+          <input type="checkbox" class="pro" name="product" id="product_5" value="pro_5" />
+          <label for="product_5">文創商品</label>
+          <input type="checkbox" name="product" id="product_myCheck" onclick="myFunction_04()" value="" />
+          <label for="product_myCheck">其他:</label>
+          <input type="text" name="product" id="product_other" style="display: none" value="" />
+
+                 <script>
+            function myFunction_04() {
+              var checkbox = document.getElementById("product_myCheck");
+              var text = document.getElementById("product_other");
+              if (checkbox.checked == true) {
+                text.style.display = "";
+              } else {
+                text.style.display = "none";
+              }
+            }
+          </script>
+
+        </div>
+
+        <div id="time_0">
+          <p>7.平均多久使用一次攝影棚?</p>
+          <input
+            type="range"
+            name="frequency"
+            max="12"
+            min="0"
+            step="1"
+            onchange="document.getElementById('show01').innerHTML=value"
+          /><span id="show01"></span>
+          次/年
+          <br /><br />
+        </div>
+
+        <div id="Makeup">
+          <p>8.是否有化妝區的需求??</p>
+          <input type="radio" name="makeup" id="Makeup_0" value="make_0" checked />
+          <label for="Makeup_0">是</label>
+          <input type="radio" name="makeup" id="Makeup_1" value="make_1" />
+          <label for="Makeup_1">否</label>
+          <br /><br />
+        </div>
+
+        <div id="city_00">
+          <p>9.是否有願意跨縣市到攝影棚?</p>
+          <input type="radio" name="city" id="city_0" value="ci_0" checked />
+          <label for="city_0">是</label>
+          <input type="radio" name="city" id="city_1" value="ci_1" />
+          <label for="city_1">否</label>
+          <br /><br />
+        </div>
+
+        <div id="item">
+          <p>10.道具的選擇或攝影棚的特色哪個吸引你?</p>
+          <input type="radio" name="item" id="item_0" value="it_0" checked />
+          <label for="item_0">道具的選擇多樣性</label>
+          <input type="radio" name="item" id="item_1" value="it_0" />
+          <label for="item_1">具特色性的攝影棚</label>
+          <br />
+          <br />
+        </div>
+
+        <div id="Area_0">
+          <p>11.有沒有某種場景你很想拍攝，但是一直沒有相關的場景??</p>
+
+          <textarea
+            name="Area"
+            rows="5"
+            cols="60"
+            placeholder="廢墟?"
+            style="resize: none; width: 300px; height: 150px"
+            value=""
+          ></textarea>
+          <br />
+          <br />
+        </div>
+
+        <div id="sex_0">
+          <p>12.性別：</p>
+          <input type="radio" id="male" name="sex" />
+          <label for="male">生理男性</label>
+          <input type="radio" id="female" name="sex" />
+          <label for="female">生理女性</label>
+          <input type="radio" id="sex_other" name="sex" />
+          <label for="sex_other">其他</label>
+          <br />
+          <br />
+        </div>
+
+        <div id="age">
+          <p>12.年齡：</p>
+          <input type="radio" id="age_0" name="age00" />
+          <label for="age_0">12~18歲</label>
+          <input type="radio" id="age_1" name="age00" />
+          <label for="age_1">19~25歲</label>
+          <input type="radio" id="age_2" name="age00" />
+          <label for="age_2">25~30歲</label>
+          <input type="radio" id="age_3" name="age00" />
+          <label for="age_3">30~40歲</label>
+          <input type="radio" id="age_4" name="age00" />
+          <label for="age_4">40歲以上</label>
+          <br />
+          <br />
+        </div>
+        <div id="sex_0">
+          <p>13.交通工具：</p>
+          <input type="checkbox" name="transportation" id="car" />
+          <label for="car">汽車</label>
+          <input type="checkbox" name="transportation" id="moto" />
+          <label for="moto">機車</label>
+          <input type="checkbox" name="transportation" id="public" />
+          <label for="public">大眾運輸</label>
+          <br />
+          <br />
+        </div>
+
+        <div id="survey_0">
+          <p>
+            14.如何知道這份問卷的?&emsp;
+            <select name="survey" id="survey_00">
+              <optgroup label="網路上">
+                <option value="">FB社團</option>
+                <option value="">FB好友</option>
+                <option value="">IG</option>
+              </optgroup>
+              <optgroup label="現實上">
+                <option value="">認識問卷發出人</option>
+                <option value="">朋友的朋友認識我</option>
+                <option value="">其他</option>
+              </optgroup>
+            </select>
+          </p>
+          <br /><br /><br /><br />
+        </div>
+        <br />
+        <br />
+
+        <footer>
+          <input type="image" name="photo" src="./image/booking/send.jpg" onclick="submit()" title="點我提交"  />
+        </footer>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+    </form>
+  </body>
+</html>

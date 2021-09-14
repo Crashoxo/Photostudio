@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <style type="text/css">
+    .class1,
+    .class2 {
+      width: 100px;
+      height: 40px;
+      margin: 10px;
+    }
+    #count {
+      background-color: sandybrown;
+      width: 400px;
+      height: 200px;
+    }
+  </style>
+  <body>
+    <div>
+      <button class="class1" data-belong="class1">皮鞋</button>
+      <button class="class1" data-belong="class1">凉鞋</button>
+      <button class="class1" data-belong="class1">拖鞋</button>
+    </div>
+    <div>
+      <button class="class2" data-belong="class2">手套</button>
+      <button class="class2" data-belong="class2">皮手套</button>
+      <button class="class2" data-belong="class2">毛手套</button>
+    </div>
+    <div class="count"></div>
+  </body>
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+  //只需保持 button 的 class 标志 和data-belong  一致即可。
+  $("div:lt(2) button").click(function () {
+    $("div.count ." + $(this).attr("data-belong")).remove();
+    $(this).clone().appendTo("div.count");
+
+    $(".count button")
+      .off("click")
+      .on("click", function () {
+        $(this).remove();
+      });
+  });
+</script>
+———————————————— 版权声明：本文为CSDN博主「当作看不见」的原创文章，遵循CC 4.0
+BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：https://blog.csdn.net/qq_29594393/article/details/54023259

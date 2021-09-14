@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
+    <!-- google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+
+    <style>
+      nav.navbar {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+
+      .navbar-inverse {
+        background-color: #222;
+        border-color: #080808;
+      }
+
+      nav.navbar.transparent {
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .navbar-brand {
+        color: white;
+      }
+
+      .nav-link {
+        color: white;
+      }
+
+      .navbar-toggler {
+        color: white;
+      }
+
+      .navbar-toggler-icon {
+        color: darkgrey;
+        /* 置中 */
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      nav a:hover {
+        color: darkgrey;
+      }
+
+      .navbar-toggler-icon:hover {
+        color: white;
+      }
+
+      .search_back {
+        background: transparent;
+      }
+      .search_back:focus {
+        background: rgb(255, 255, 255);
+        outline: none;
+        outline: 0;
+      }
+
+      .top_photo_div {
+        background-color: #f4f1ea;
+      }
+
+      .bg_color{
+        width: 100%;
+        
+        background-color: rgb(194, 78, 36);
+      }
+
+      /* ------------------------------------------- */
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .button_TOP {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        
+    
+      }
+
+      .item_background{
+    
+        background-image: url(./image/123.png);
+        background-position:bottom;
+        background-position:left;
+/* margin-bottom: -1%;------------------------------------------------ */
+ 
+        /* background-repeat: no-repeat; */
+      }
+      .opacity{
+        background-color: rgba(150, 150, 62, 0.9);
+      }
+
+      /* --------------------------------- */
+   
+    .main_footer {
+        width: 100%;
+        background-color: #dac9b8;
+        font-weight:bold;
+        
+    
+      }
+      
+      #footer_button{
+      /* display: flex;
+      justify-content: center;
+      align-items:center ; */
+      background-color: #dac9b8;
+      padding-left: 25%;
+
+      }
+
+      .footer_item {
+        display: inline-block;
+        display: flex;
+        align-items:center ;
+        justify-content: center;
+      }
+      
+      .footer_item_view {
+        background-color: #dac9b8;
+        display: flex;
+        width: 50%;
+        justify-content:space-around;
+        align-items:center ;
+        color: #725B53;
+      }
+      .footer_item a {
+        color: #725B53;
+      }
+      /* ------------------------------------------- */
+      footer {
+        width: 100%;
+        height: 50px;
+        background-color: #725B53;
+        /* 置中 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer_item_icon{
+        font-size: 70px;
+        padding-left:25%;
+        /* background-color: darkred; */
+      }
+
+      .footer_item_icon a:hover{
+        position: relative; /* 當滑鼠經過超連結時，超連結往右下位移10像素 */
+        top: 5px;
+        left: 5px;
+        color: #FFF;
+      }
+  
+     @media screen and (max-width: 800px) {
+      #footer_button{
+       padding-left: 5px;
+      font-size: 45px;
+      }
+      .footer_item_icon{
+        font-size: 50px;
+        padding-left:0;
+      }
+
+     }
+      /* ------------------------------------------- */
+
+      button:focus {
+        /* button focus沒有外框 */
+        outline: 0;
+      }
+
+      a:hover {
+        /* 超連結沒底線 */
+        text-decoration:none
+      }
+    </style>
+<head>
+  <!-- 變透明 -->
+<script>
+ // jQuery .scroll() 事件可用於滾動的元素和瀏覽器視窗物件 window。
+ $(window).scroll(function () {
+   if ($(document).scrollTop() > 50) {
+     $("nav").addClass("transparent");
+   } else {
+     $("nav").removeClass("transparent");
+   }
+ });
+</script>
+    <!-- Custom styles for this template -->
+    <link href="./clothing_css/pricing.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg_color">
+      <!-- header -->
+      <header>
+        <div class="top_photo_div">
+          <picture>
+            <source media="(min-width: 1100px)" srcset="./image/057.jpg" />
+            <source media="(min-width: 800px)" srcset="https://dummyimage.com/650x650/000/fff" />
+            <img  class="top_photo" src="https://dummyimage.com/400x1200/000/fff" style="width: 100%" />
+          </picture>
+          <!-- <img class="top_photo" src="./image/057.jpg" alt=""  style="width: auto"/> -->
+        </div>
+      </header>
+      <!-- navbar -->
+      <!-- https://getbootstrap.com/docs/4.6/components/navbar/#responsive-behaviors -->
+      <!-- navbar-inverse 透明 -->
+      <nav class="navbar navbar-expand-md navbar-inverse fixed-top">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" >
+          <!-- 漢堡 -->
+          <i class="fa fa-bars navbar-toggler-icon" aria-hidden="true"></i>
+        </button>
+        <!-- 1.div (與mr-auto則一) justify-content-end到最右邊 d-flex justify-content-center 中間 -->
+        <!-- 但justify-content會使漢堡失效 -->
+        <!-- 2.d-flex bd-highlight mb-3 變粗 並 排序 -->
+        <!-- https://getbootstrap.com/docs/4.6/utilities/flex/#auto-margins -->
+        <!-- 但是依然會壞掉,怎麼去中間?? -->
+        <!-- 3.d-flex justify-content-around 會壞掉~~~ -->
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+          <!-- 1.ul (與justify-content則一)或ml-auto到最右邊 mr-auto最左邊(Search在最右邊) -->
+           <ul class="navbar-nav ml-auto">
+           <li class="nav-item active">
+              <a class="fa fa-barcode nav-link" href="#ous"> 關於我們</a>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-heart nav-link" href="#studio"> 攝影棚</a>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-heart nav-link" href="#item"> 道具出租</a>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-heart nav-link" href="#clothing"> 服裝體驗</a>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-heart nav-link" href="#booking"> 線上預約</a>
+            </li>
+            <li class="nav-item">
+              <a class="fa fa-heart nav-link pr-5" href="#traffic"> 交通資訊</a>
+            </li>
+            </li>
+         
+  
+  
+            
+            <!-- 下拉清單 v1 -->
+            <!-- <li class="nav-item dropdown">
+              <a class="fa fa-heart nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul> -->
+  
+        <!-- search -->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2 search_back" type="search" placeholder="Search" style="width: 150px;"/>
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- -------------------------- -->
+  <!-- <div style="width: auto;height: 500px;"></div> -->
+
+      <!-- ------------------------------------- -->
+  <div class="item_background">
+    <div class="button_TOP ">
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+    <div class="container py-3">
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center ">
+          
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm  opacity">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <img src="./image/123-2.png" alt="" />
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm  opacity">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <img src="./image/123-2.png" alt="" />
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm  opacity">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <img src="./image/123-2.png" alt="" />
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 users included</li>
+                  <li>10 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- --------------------------------------- -->
+  
+  <div class="main_footer">
+    <div class="main_footer_indide">
+      <div class="footer_item footer_item_icon m-5">
+        <div>
+          <a href=""><i class="fa fa-facebook-square p-4" aria-hidden="true"></i></a>
+        </div>
+        <div>
+          <a href=""><i class="fa fa-instagram p-4" aria-hidden="true"></i></a>
+        </div>
+        <div>
+          <a href=""><i class="fa fa-twitch p-4" aria-hidden="true"></i></a>
+        </div>
+        <div id="footer_button">
+          <a href="#TOP"><span style="font-size: 150%;" class="material-icons">arrow_circle_up</span></a>
+       </div>
+      </div>
+      <div class="footer_item">
+
+            <div class=" footer_item_view">
+              <div>
+                 <a href="">關於我們</a>
+               </div>
+               <div>
+                ｜
+              </div>
+               <div>
+                <a href="">攝影棚</a>
+              </div>
+              <div>
+                ｜
+              </div>
+              <div>
+                <a href="">道具出租</a>
+              </div>
+              <div>
+                ｜
+              </div>
+              <div>
+                <a href="">服裝體驗</a>
+              </div>
+              <div>
+                ｜
+              </div>
+              <div>
+                <a href="">線上預約</a>
+              </div>
+              <div>
+                ｜
+              </div>
+              <div>
+                <a href="">交通資訊</a>
+              </div>
+              
+         </div>
+          </div>
+         
+      </div>
+      <footer class="text-white">
+          台中市實景攝影棚&copy;官網
+      </footer>
+    </div>
+
+  </body>
+</html>
